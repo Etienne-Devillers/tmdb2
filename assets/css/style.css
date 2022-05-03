@@ -1,0 +1,163 @@
+body {
+    margin: 0;
+    margin-bottom: 4em;
+    background-color: #032541;
+}
+
+h4 {
+    margin: 0;
+    color: white;
+}
+
+h1 {
+    margin: 0;
+    color: white;
+}
+
+.card {
+
+    display: flex;
+    flex-direction: row;
+    margin-top: 2em;
+    width: 100%;
+    height: 420px;
+    position: relative
+}
+
+
+.poster {
+    width: 100%;
+
+}
+
+.cardContent {
+    background-color: rgba(0, 0, 0, 0.74);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.filmTitle {
+    margin: 0 1em;
+    height: 20%;
+}
+
+.filmText {
+    margin: 0 1em;
+    height: 70%;
+    overflow: hidden;
+}
+
+
+.filmNote {
+    height: 10%;
+}
+
+.filmNote img {
+    width: 20px;
+    filter: invert(52%) sepia(100%) saturate(386%) hue-rotate(21deg) brightness(91%) contrast(90%);
+}
+
+.card:hover .cardContent {
+    opacity: 1;
+}
+
+
+
+#modalContainer {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    z-index: 5;
+    backdrop-filter: blur(5px);
+    
+}
+
+#modalCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    height: 90%;
+    
+    z-index: 2;
+}
+#modalCard img {
+    width: auto%;
+    height: auto;
+}
+
+
+#modalContainer:before {
+    position: absolute;
+    background-color: white;
+    opacity: 0.2;
+    backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
+    content: '';
+    height: 85%;
+    width: 90%;
+    z-index: 1;
+
+    border-radius: 15px;
+}
+
+#backgroundImg {
+    width: 90%;
+}
+
+#filmDescription {
+    position: absolute;
+    background-color: green;
+    width: 80%;
+    height: 20%;
+}
+
+#containerLoader {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    background-color: #032541;
+    visibility: hidden;
+}
+
+#containerLoader.active {
+    visibility: visible;
+}
+
+#loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 5rem;
+    width: 5rem;
+    z-index: 11;
+    border-radius: 100%;
+    border: 5px solid white;
+    border-top: 6px solid #01fd62;
+    animation: loading 1s infinite linear;
+
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Modif Bootstrap */
